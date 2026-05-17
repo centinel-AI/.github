@@ -11,18 +11,18 @@
  ╚═════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝
 ```
 
-### *Tu infraestructura nunca duerme. Ahora tú sí puedes.*
+### *Your infrastructure never sleeps. Now you can.*
 
 <br/>
 
-[![Beta Abierta](https://img.shields.io/badge/🚀_Beta-Únete_gratis-6C63FF?style=for-the-badge)](https://centinelai.io)
-[![Estado](https://img.shields.io/badge/Estado-En_construcción_activa-F59E0B?style=for-the-badge)](#roadmap)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Síguenos-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/company/centinelai)
+[![Open Beta](https://img.shields.io/badge/🚀_Beta-Join_free-6C63FF?style=for-the-badge)](https://centinelai.io)
+[![Status](https://img.shields.io/badge/Status-Actively_building-F59E0B?style=for-the-badge)](#roadmap)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Follow_us-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/company/centinelai)
 
 <br/>
 
-> **¿Cuántas alertas recibió tu equipo ayer?**
-> ¿Cuántas importaban de verdad?
+> **How many alerts did your team receive yesterday?**
+> How many actually mattered?
 
 <br/>
 
@@ -30,60 +30,60 @@
 
 ---
 
-## 🔥 El problema que nadie resuelve (todavía)
+## 🔥 The problem nobody has solved (yet)
 
 <table>
 <tr>
 <td width="50%">
 
-### Sin centinelAI
+### Without centinelAI
 
 ```
-🔴 ALERT: CPU > 80% en prod-api-01
-🔴 ALERT: CPU > 80% en prod-api-01
-🔴 ALERT: CPU > 80% en prod-api-01
-🟡 WARN:  Latencia p99 elevada
-🔴 ALERT: CPU > 80% en prod-api-02
-📧 EMAIL: Pipeline fallido en staging
-🔴 ALERT: CPU > 80% en prod-api-01
-💬 SLACK: "oye alguien mira esto?"
+🔴 ALERT: CPU > 80% on prod-api-01
+🔴 ALERT: CPU > 80% on prod-api-01
+🔴 ALERT: CPU > 80% on prod-api-01
+🟡 WARN:  Elevated p99 latency
+🔴 ALERT: CPU > 80% on prod-api-02
+📧 EMAIL: Pipeline failed on staging
+🔴 ALERT: CPU > 80% on prod-api-01
+💬 SLACK: "hey, is anyone looking at this?"
 🔴 ALERT: Memory usage > 90%
-📟 PAGER: On-call despertado a las 3am
-🔴 ALERT: CPU > 80% en prod-api-03
-💬 SLACK: "lo veo, era un falso positivo"
-🔴 ALERT: CPU > 80% en prod-api-01
-...x847 más esta noche
+📟 PAGER: On-call woken up at 3am
+🔴 ALERT: CPU > 80% on prod-api-03
+💬 SLACK: "I see it, was a false positive"
+🔴 ALERT: CPU > 80% on prod-api-01
+...847 more tonight
 ```
 
-❌ El equipo aprende a ignorarlas  
-❌ La alerta real se pierde entre el ruido  
-❌ El cliente detecta el fallo antes que tú
+❌ The team learns to ignore them  
+❌ The real alert gets lost in the noise  
+❌ The customer notices the outage before you do
 
 </td>
 <td width="50%">
 
-### Con centinelAI
+### With centinelAI
 
 ```
-🟣 [centinelAI] INCIDENTE REAL — 03:47
+🟣 [centinelAI] REAL INCIDENT — 03:47
 
-   Servicio: prod-api (3 réplicas)
-   Causa raíz: OOMKilled tras deploy
-   de las 03:30 (rama: feat/image-resize)
-   Autor: @carlos
+   Service: prod-api (3 replicas)
+   Root cause: OOMKilled after deploy
+   at 03:30 (branch: feat/image-resize)
+   Author: @carlos
 
-   Impacto: latencia p99 +340ms
-   Afectados: ~120 usuarios activos
+   Impact: p99 latency +340ms
+   Affected: ~120 active users
 
-   ▶ Sugerencia: rollback a v2.4.1
+   ▶ Suggested action: rollback to v2.4.1
    ▶ kubectl rollout undo deployment/api
 
-   Postmortem generado automáticamente.
+   Postmortem generated automatically.
 ```
 
-✅ 1 notificación, no 847  
-✅ Causa raíz identificada al instante  
-✅ Tu equipo duerme. Los usuarios también.
+✅ 1 notification, not 847  
+✅ Root cause identified instantly  
+✅ Your team sleeps. Your users too.
 
 </td>
 </tr>
@@ -91,46 +91,46 @@
 
 ---
 
-## ⚡ Qué hace centinelAI
+## ⚡ What centinelAI does
 
 <div align="center">
 
 ```
-                    TODO LO QUE GENERA RUIDO EN TU STACK
-                              │
-         ┌────────────────────┼────────────────────┐
+                  EVERYTHING GENERATING NOISE IN YOUR STACK
+                                │
+         ┌────────────────────┬─┴──────────────────┐
          ▼                    ▼                    ▼
    [Kubernetes]         [Datadog / NR]        [GitHub / GitLab]
    [Prometheus]         [Grafana]             [PagerDuty]
-   [UptimeRobot]        [Alertmanager]        [Slack entrante]
+   [UptimeRobot]        [Alertmanager]        [Incoming Slack]
          │                    │                    │
          └────────────────────┼────────────────────┘
                               │
                               ▼
               ┌───────────────────────────────┐
-              │      PIPELINE DE 4 AGENTES IA  │
+              │       4-AGENT AI PIPELINE      │
               │                               │
-              │  ➊ DEDUPLICADOR               │
-              │     Elimina el ruido repetido  │
-              │     847 alertas → 23 únicas    │
+              │  ➊ DEDUPLICATOR               │
+              │     Removes repeated noise     │
+              │     847 alerts → 23 unique     │
               │              │                │
               │  ➋ SCORER (Claude Haiku)      │
-              │     Puntúa cada alerta 0-100   │
-              │     23 únicas → 8 relevantes   │
+              │     Scores each alert 0-100    │
+              │     23 unique → 8 relevant     │
               │              │                │
-              │  ➌ CORRELADOR (Claude Haiku)  │
-              │     Conecta señales entre sí   │
-              │     8 relevantes → 2 causas    │
+              │  ➌ CORRELATOR (Claude Haiku)  │
+              │     Connects signals together  │
+              │     8 relevant → 2 root causes │
               │              │                │
-              │  ➍ NOTIFICADOR (Claude Sonnet) │
-              │     Genera contexto accionable │
-              │     2 causas → 1 que importa   │
+              │  ➍ NOTIFIER (Claude Sonnet)   │
+              │     Generates actionable ctx   │
+              │     2 causes → 1 that matters  │
               └───────────────────────────────┘
                               │
-                              ▼  solo si score > 70
+                              ▼  only if score > 70
               ┌───────────────────────────────┐
-              │   TU EQUIPO — cuando importa  │
-              │   Slack · Email · Dashboard   │
+              │   YOUR TEAM — when it matters  │
+              │   Slack · Email · Dashboard    │
               └───────────────────────────────┘
 ```
 
@@ -138,58 +138,58 @@
 
 ---
 
-## 🔌 Conectores — Habla el idioma de tu stack
+## 🔌 Connectors — Speaks your stack's language
 
-> centinelAI no te pide que cambies tus herramientas. Se conecta a lo que ya tienes.
+> centinelAI doesn't ask you to change your tools. It connects to what you already have.
 
-### ✅ MVP — Disponibles desde el día 1
+### ✅ Available from day one
 
-| | Herramienta | Qué aporta | Cómo se conecta |
+| | Tool | What it adds | How it connects |
 |---|---|---|---|
-| ☸️ | **Kubernetes** | CrashLoops, OOMKills, Evictions, NodeNotReady, deploys fallidos | Agente Python en tu cluster |
-| 🦊 | **GitLab CI/CD** | Pipelines rotos, deploys a prod, rollbacks automáticos | Webhook nativo |
-| 🐙 | **GitHub Actions** | Workflows fallidos, deploys, correlación commit↔incidente | Webhook nativo |
-| 📊 | **Prometheus + Grafana** | CPU, memoria, latencia, SLOs, Alertmanager | Webhook nativo |
-| 🐕 | **Datadog** | APM, logs, synthetics, monitors | Webhook nativo |
-| 🤖 | **Slack** | Salida enriquecida + entrada con botones de acción | Bot API |
-| 🟢 | **UptimeRobot** | Endpoints caídos, tiempo de respuesta degradado | Webhook nativo |
+| ☸️ | **Kubernetes** | CrashLoops, OOMKills, Evictions, NodeNotReady, failed deploys | Python agent in your cluster |
+| 🦊 | **GitLab CI/CD** | Broken pipelines, prod deploys, automatic rollbacks | Native webhook |
+| 🐙 | **GitHub Actions** | Failed workflows, deploys, commit↔incident correlation | Native webhook |
+| 📊 | **Prometheus + Grafana** | CPU, memory, latency, SLOs, Alertmanager | Native webhook |
+| 🐕 | **Datadog** | APM, logs, synthetics, monitors | Native webhook |
+| 🤖 | **Slack** | Enriched output + action button input | Bot API |
+| 🟢 | **UptimeRobot** | Downed endpoints, degraded response times | Native webhook |
 
-### 🔜 Fase 2 — En el roadmap
+### 🔜 Phase 2 — On the roadmap
 
-| | Herramienta | Estado |
+| | Tool | Status |
 |---|---|---|
-| 🔔 | **PagerDuty** | Historial de on-call + correlación de incidentes | Próximamente |
-| 🔵 | **New Relic** | Alternativa a Datadog para equipos que migran | Próximamente |
-| ☁️ | **AWS CloudWatch** | Infra en AWS, Lambda, RDS, ECS | Próximamente |
-| 🔷 | **Azure Monitor** | Action Groups, App Insights | Próximamente |
-| 🟠 | **Google Cloud Monitoring** | GKE, Cloud Run, BigQuery | Próximamente |
-| 🪲 | **Sentry** | Errores de código que se correlacionan con picos de infra | Próximamente |
+| 🔔 | **PagerDuty** | On-call history + incident correlation | Coming soon |
+| 🔵 | **New Relic** | Alternative for teams migrating from Datadog | Coming soon |
+| ☁️ | **AWS CloudWatch** | AWS infra, Lambda, RDS, ECS | Coming soon |
+| 🔷 | **Azure Monitor** | Action Groups, App Insights | Coming soon |
+| 🟠 | **Google Cloud Monitoring** | GKE, Cloud Run, BigQuery | Coming soon |
+| 🪲 | **Sentry** | Code errors correlated with infra spikes | Coming soon |
 
-> **¿Usas algo que no está aquí?** [Abre un Issue →](https://github.com/centinelai/docs/issues/new)
+> **Using something not listed?** [Open an Issue →](https://github.com/centinelai/docs/issues/new)
 
 ---
 
-## 🏗️ Arquitectura
+## 🏗️ Architecture
 
 ```
 centinelai/
-├── 🌐 app/          [PRIVADO]  Next.js 14 + Supabase — dashboard, API, billing
-├── 🤖 agent/        [PÚBLICO]  Agente Python para Kubernetes — instálalo en tu cluster
-├── ⚙️  infra/        [PRIVADO]  IaC, configuración de entornos, scripts de deploy
-└── 📚 docs/         [PÚBLICO]  Documentación, guías de integración, changelog
+├── 🌐 app/          [PRIVATE]   Next.js 14 + Supabase — dashboard, API, billing
+├── 🤖 agent/        [PUBLIC]    Python agent for Kubernetes — deploy in your cluster
+├── ⚙️  infra/        [PRIVATE]   IaC, environment config, deploy scripts
+└── 📚 docs/         [PUBLIC]    Documentation, integration guides, changelog
 ```
 
-**Stack tecnológico:**
+**Technology stack:**
 
 ```
 Frontend    →  Next.js 14 (App Router + Server Components + Streaming)
-Base datos  →  Supabase (PostgreSQL + pgvector + Realtime + RLS multi-tenant)
-IA          →  Claude Haiku (scoring/correlación masiva) + Sonnet (síntesis)
-Memoria     →  pgvector — RAG sobre historial de postmortems de TU equipo
-Workflows   →  Inngest — cola de eventos serverless
+Database    →  Supabase (PostgreSQL + pgvector + Realtime + multi-tenant RLS)
+AI          →  Claude Haiku (bulk scoring/correlation) + Sonnet (synthesis)
+Memory      →  pgvector — RAG over YOUR team's postmortem history
+Workflows   →  Inngest — serverless event queue
 Notif.      →  Slack Bot API + Resend (email)
-Pagos       →  Stripe
-Deploy      →  Vercel (CD automático)
+Payments    →  Stripe
+Deploy      →  Vercel (automatic CD)
 ```
 
 ---
@@ -199,132 +199,135 @@ Deploy      →  Vercel (CD automático)
 ```
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  FASE 1 ████████░░░░░░░░░░░░░░  Semanas 1-2
-  Base técnica + agente K8s + GitLab + GitHub + dashboard
+  PHASE 1 ████████░░░░░░░░░░░░░░  Weeks 1-2
+  Technical foundation + K8s agent + GitLab + GitHub + dashboard
 
-  FASE 2 ░░░░░░░░████████░░░░░░  Semanas 3-4
-  Correlación IA + Slack enriquecido + Prometheus + Datadog
-  Postmortem automático + silenciamiento inteligente
+  PHASE 2 ░░░░░░░░████████░░░░░░  Weeks 3-4
+  AI correlation + enriched Slack + Prometheus + Datadog
+  Automatic postmortem + intelligent silencing
 
-  FASE 3 ░░░░░░░░░░░░░░░░██████  Semanas 5-6
-  Onboarding < 10 min + Stripe + primer cliente de pago
-  UptimeRobot + New Relic + métricas de uso
+  PHASE 3 ░░░░░░░░░░░░░░░░██████  Weeks 5-6
+  Onboarding < 10 min + Stripe + first paying customer
+  UptimeRobot + New Relic + usage metrics
 
-  FASE 4 ░░░░░░░░░░░░░░░░░░░░░░  Mes 2+
-  RAG histórico + scoring personalizado por equipo
-  PagerDuty + AWS/Azure/GCP + API pública + SSO
+  PHASE 4 ░░░░░░░░░░░░░░░░░░░░░░  Month 2+
+  Historical RAG + per-team custom scoring
+  PagerDuty + AWS/Azure/GCP + public API + SSO
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ---
 
-## 💶 Planes
+## 💶 Plans
 
 <div align="center">
 
 | | **Free** | **Team** ⭐ | **Pro** |
 |---|:---:|:---:|:---:|
-| **Precio** | 0 €/mes | 149 €/mes | 349 €/mes |
-| Clusters / fuentes | 1 | 5 | Ilimitadas |
-| Alertas/día | 500 | 10.000 | Ilimitadas |
-| Conectores | 3 | Todos | Todos |
-| Correlación IA | ✓ | ✓ | ✓ |
-| Postmortems auto | ✗ | ✓ | ✓ |
-| Historial RAG | ✗ | 30 días | Ilimitado |
+| **Price** | €0/month | €99/month | Custom pricing |
+| Clusters / sources | 1 | 25 | Unlimited |
+| Alerts/day | 500 | Unlimited | Unlimited |
+| Connectors | 3 | All | All |
+| AI correlation | ✓ | ✓ | ✓ |
+| Auto postmortems | ✗ | ✓ | ✓ |
+| RAG history | ✗ | 30 days | Unlimited |
 | SSO / SAML | ✗ | ✗ | ✓ |
-| SLA | ✗ | ✗ | 99,9% |
-| Soporte | Community | Email | Dedicado |
+| SLA | ✗ | ✗ | 99.9% |
+| Support | Community | Email | Dedicated |
 
-*Margen bruto > 85% desde el primer cliente de pago. Coste de infra en beta: 0 €/mes.*
+*Gross margin > 85% from the first paying customer. Infra cost in beta: €0/month.*
 
 </div>
 
 ---
 
-## 🚀 Instalación del agente (en 2 minutos)
+## 🚀 Agent installation (2 minutes)
 
 ```bash
-# 1. Crear el secreto con tu token
+# 1. Apply the manifest (creates namespace, RBAC and agent)
+kubectl apply -f https://centinelai.io/api/install/k8s/manifest.yaml
+
+# 2. Create the secret with your token
 kubectl create secret generic centinela-token \
-  --from-literal=SENTINEL_TOKEN=<tu-token-de-centinelai.io> \
-  --from-literal=SENTINEL_API_URL=https://centinelai.io/api \
-  -n centinela-system --create-namespace
+  --from-literal=SENTINEL_TOKEN=<your-token-from-centinelai.io> \
+  --from-literal=SENTINEL_API_URL=https://centinelai.io \
+  -n centinela-system
 
-# 2. Instalar el agente en tu cluster
-kubectl apply -f https://centinelai.io/install/k8s/manifest.yaml
+# 3. Restart to pick up the secret
+kubectl rollout restart deployment/centinela-agent -n centinela-system
 
-# 3. Verificar
+# 4. Verify
 kubectl get pods -n centinela-system
 # centinela-agent-xxxx   1/1   Running   0   45s  ✓
 ```
 
-**Para el resto de conectores** (Datadog, GitLab, GitHub, Prometheus...) solo necesitas pegar una URL de webhook. Sin instalaciones, sin agentes adicionales.
+For all other connectors (Datadog, GitLab, GitHub, Prometheus...) you just need to paste a webhook URL. No extra installations, no additional agents.
 
 ---
 
-## 🎯 Para quién es centinelAI
+## 🎯 Who is centinelAI for
 
-✅ **Encaja perfectamente si...**
-- Tu equipo recibe más de 100 alertas al día y ha aprendido a ignorarlas
-- Usas Kubernetes, GitLab/GitHub o Datadog/Prometheus en producción
-- Tienes entre 5 y 200 personas en el equipo técnico
-- Pagas > 500 €/mes en herramientas de observabilidad enterprise pero no las aprovechas al máximo
-- Tu on-call se despierta por falsas alarmas más de 2 veces por semana
+✅ **A great fit if...**
+- Your team receives more than 100 alerts a day and has learned to ignore them
+- You use Kubernetes, GitLab/GitHub or Datadog/Prometheus in production
+- You have between 5 and 200 people on the technical team
+- You pay > €500/month for enterprise observability tools but don't get full value
+- Your on-call gets woken up by false alarms more than twice a week
 
-❌ **No es para ti si...**
-- Tienes 0 alertas (¡no tienes monitorización suficiente, ese es otro problema!)
-- Tu infra es puramente on-premise sin webhooks
-- Necesitas compliance muy específico antes de enviar datos fuera del cluster
+❌ **Not for you if...**
+- You have 0 alerts (you don't have enough monitoring — that's a different problem!)
+- Your infra is purely on-premise with no webhook support
+- You need very specific compliance before sending data outside the cluster
 
 ---
 
-## 📊 El mercado
+## 📊 The market
 
 ```
-España, 2026:
+Spain + LATAM, 2026:
 
-~4.800 empresas con equipos DevOps de +10 personas
-~82% usan Kubernetes en algún entorno de producción
-~71% tienen problemas activos de fatiga de alertas
+~4,800 companies with DevOps teams of 10+ people
+~82% use Kubernetes in some production environment
+~71% have active alert fatigue problems
 
-Competidores enterprise (Datadog AIOps, New Relic AI):
-→ Precio de entrada: 500-800 €/mes
-→ Requieren adoptar todo su stack
-→ Inaccesibles para equipos < 100 personas
+Enterprise competitors (Datadog AIOps, New Relic AI):
+→ Entry price: €500-800/month
+→ Require adopting their entire stack
+→ Out of reach for teams < 100 people
 
-Ventana de oportunidad: 12-18 meses
+Opportunity window: 12-18 months
 ```
 
 ---
 
-## 🤝 Beta cerrada — 10 equipos en España
+## 🤝 Open beta — 10 teams
 
-Estamos buscando **10 equipos DevOps** para probar centinelAI en producción real antes del lanzamiento.
+We're looking for **10 DevOps teams** to test centinelAI in real production before launch.
 
-**A cambio ofrecemos:**
-- ✅ Acceso gratuito durante 3 meses (plan Team)
-- ✅ Influencia directa en el roadmap
-- ✅ Onboarding personalizado con el equipo fundador
-- ✅ Caso de éxito publicado (si quieres visibilidad)
+**What we offer:**
+- ✅ Free access for 3 months (Team plan)
+- ✅ Direct influence on the roadmap
+- ✅ Personalised onboarding with the founding team
+- ✅ Published case study (if you want the visibility)
 
-**¿Te interesa?** → [centinelai.io](https://centinelai.io) o escríbenos directamente en LinkedIn
+**Interested?** → [centinelai.io](https://centinelai.io) or reach out directly on LinkedIn
 
 ---
 
-## 🛠️ Para el equipo — Contribuir
+## 🛠️ Contributing
 
 ```bash
-# Clona el repo correspondiente
+# Clone the relevant repo
 git clone https://github.com/centinelai/<app|agent|infra|docs>
 
-# Crea tu rama
-git checkout -b feat/nombre-de-la-tarea
+# Create your branch
+git checkout -b feat/your-task-name
 
-# Desarrolla y abre PR hacia main
-# Toda tarea tiene su Issue en el GitHub Project
+# Develop and open a PR against main
+# Every task has its Issue in the GitHub Project
 ```
 
-> `main` tiene protección activa en todos los repos. No se hace push directo.
+> `main` has branch protection active on all repos. No direct pushes.
 
 ---
 
@@ -334,9 +337,8 @@ git checkout -b feat/nombre-de-la-tarea
 
 **centinelAI** · 2026
 
-[🌐 Web](https://centinelai.io) · [💼 LinkedIn](https://linkedin.com/company/centinelai) · [📧 Beta](mailto:hola@centinelai.io)
+[🌐 Website](https://centinelai.io) · [💼 LinkedIn](https://linkedin.com/company/centinelai) · [📧 Contact](mailto:info@centinelai.io)
 
 ---
 
 </div>
-
