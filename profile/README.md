@@ -1,22 +1,21 @@
 <div align="center">
 
-
 # ◢ GRAUSS
 
-### **Despliega infraestructura con agentes de IA**
+### **Deploy infrastructure with AI agents**
 
-*Describe lo que quieres. Los agentes lo aprovisionan, lo vigilan y lo mantienen.*
-
-<br/>
-
-[![Beta](https://img.shields.io/badge/%E2%97%8F_Beta-Acceso_anticipado-059669?style=for-the-badge)](https://grauss.io)
-[![Estado](https://img.shields.io/badge/En_construcci%C3%B3n-activa-10B981?style=for-the-badge)](#)
+*Describe what you want. The agents provision it, watch it, and keep it that way.*
 
 <br/>
 
-> **Provisionar infra hoy es escribir Terraform, abrir PRs y rezar.**
-> Grauss lo cambia: tú declaras la intención, **los agentes ejecutan el despliegue**
-> y corrigen la deriva sin que toques un manifiesto.
+[![Beta](https://img.shields.io/badge/%E2%97%8F_Beta-Early_access-059669?style=for-the-badge)](https://grauss.io)
+[![Status](https://img.shields.io/badge/Actively-building-10B981?style=for-the-badge)](#)
+
+<br/>
+
+> **Provisioning infra today means writing Terraform, opening PRs and praying.**
+> Grauss changes that: you declare the intent, **the agents run the deploy**
+> and fix drift without you touching a single manifest.
 
 <br/>
 
@@ -24,50 +23,50 @@
 
 ---
 
-## Qué resuelve
+## What it solves
 
-| | Antes | Con Grauss |
+| | Before | With Grauss |
 |---|---|---|
-| 🚀 **Desplegar** | Terraform a mano, PRs, revisión manual | Declaras la intención, el agente aplica |
-| 🔁 **Mantener** | La infra deriva del IaC con el tiempo | Reconciliación continua hacia tu intención |
-| 🩺 **Vigilar** | 847 alertas → ruido que se ignora | Correlación a 1 incidente con causa raíz |
-| 💶 **Coste** | La factura sorprende a fin de mes | Coste atribuido y desvíos detectados al vuelo |
+| 🚀 **Deploy** | Hand-written Terraform, PRs, manual review | Declare the intent, the agent applies it |
+| 🔁 **Maintain** | Infra drifts away from your IaC over time | Continuous reconciliation toward your intent |
+| 🩺 **Watch** | 847 alerts → noise everyone ignores | Correlated down to 1 incident with root cause |
+| 💶 **Cost** | The bill surprises you at month-end | Cost attributed and overruns caught on the fly |
 
 ---
 
-## Arquitectura
+## Architecture
 
 ```
 grauss/
-├── 🧠 engine     orquestación — los agentes que planifican y aplican
-├── ☸️  agent      se despliega en tu clúster Kubernetes y reporta estado
-├── 🌐 portal     plataforma de cliente — defines intención, ves el estado
-└── 🛰️  monitor    vigilancia con IA — deriva, incidentes y coste
+├── 🧠 engine     orchestration — the agents that plan and apply
+├── ☸️  agent      runs in your Kubernetes cluster and reports state
+├── 🌐 portal     customer platform — you declare intent, you see state
+└── 🛰️  monitor    AI watch — drift, incidents and cost
 ```
 
 ```
-Next.js 16  ·  Azure Postgres + pgvector  ·  Claude (planificación + síntesis) ·  Slack / email  ·  Stripe
+Next.js 16  ·  Azure Postgres + pgvector  ·  Claude (planning + synthesis)
+Deployed on Azure AKS  ·  Slack / email  ·  Stripe
 ```
 
-Aislamiento por **proyecto**: cada proyecto tiene su cloud, sus conectores y su clave de IA (BYOK).
+Isolation per **project**: each project has its own cloud, connectors and AI key (BYOK).
 
 ---
 
-## Conectores
+## Connectors
 
-**Hoy** ☸️ Kubernetes · 🦊 GitLab CI/CD · 🐙 GitHub Actions · 📊 Prometheus/Grafana 
+**Today** ☸️ Kubernetes · 🦊 GitLab CI/CD · 🐙 GitHub Actions · 📊 Prometheus/Grafana
+**Soon** 🔔 PagerDuty · 🔵 New Relic · ☁️ CloudWatch · 🔷 Azure Monitor · 🟠 GCP · 🪲 Sentry · 🐕 Datadog · 🤖 Slack · 🟢 UptimeRobot
 
-**Pronto** 🔔 PagerDuty · 🔵 New Relic · ☁️ CloudWatch · 🔷 Azure Monitor · 🟠 GCP · 🪲 Sentry · 🐕 Datadog · 🤖 Slack · 🟢 UptimeRobot
-
-> Se conecta a lo que ya tienes. K8s con un agente; el resto, una URL de webhook.
+> It connects to what you already run. K8s via an agent; everything else, a webhook URL.
 
 ---
 
-## Beta · equipos piloto
+## Beta · pilot teams
 
-Buscamos equipos de DevOps/SRE para pilotar Grauss en producción real.
+We're looking for DevOps/SRE teams to pilot Grauss in real production.
 
-Acceso anticipado · roadmap influenciable · onboarding con el equipo fundador.
+Early access · influence the roadmap · onboarding with the founding team.
 
 **→ [grauss.io](https://grauss.io)**
 
@@ -75,10 +74,9 @@ Acceso anticipado · roadmap influenciable · onboarding con el equipo fundador.
 
 <div align="center">
 
-**Grauss** · 2026 · León, España 🇪🇸
+**Grauss** · 2026 
+[🌐 Website](https://grauss.io) · [💼 LinkedIn](https://linkedin.com/company/grauss) · [📧 Contact](mailto:info@grauss.io)
 
-[🌐 Web](https://grauss.io) · [💼 LinkedIn](https://linkedin.com/company/grauss) · [📧 Contacto](mailto:info@grauss.io)
-
-*Tu infraestructura no duerme. Ahora tú sí.*
+*Your infrastructure never sleeps. Now you can.*
 
 </div>
