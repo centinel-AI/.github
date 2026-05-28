@@ -56,6 +56,7 @@ Isolation per **project**: each project has its own cloud, connectors and AI key
 ## Connectors
 
 **Today** ☸️ Kubernetes · 🦊 GitLab CI/CD · 🐙 GitHub Actions · 📊 Prometheus/Grafana
+
 **Soon** 🔔 PagerDuty · 🔵 New Relic · ☁️ CloudWatch · 🔷 Azure Monitor · 🟠 GCP · 🪲 Sentry · 🐕 Datadog · 🤖 Slack · 🟢 UptimeRobot
 
 > It connects to what you already run. K8s via an agent; everything else, a webhook URL.
